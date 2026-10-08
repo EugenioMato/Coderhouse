@@ -1,5 +1,18 @@
+# Notas personales de estudio: se mantienen locales, no se publican.
+apuntes.md
+glosario-comandos.md
+coderhouse/
+
+# Entornos virtuales y cachés, en cualquier módulo.
 .venv/
-.env
 __pycache__/
 *.pyc
+
+# Claves: nunca al repositorio.
+.env
+
+# Editor.
 .vscode/
+
+# Documento de trabajo interno, no parte de la entrega.
+modulo 1/PLAN.md
