@@ -1,6 +1,12 @@
 """Prueba manual de los esquemas de schemas.py."""
 
+import sys
+
 from pydantic import ValidationError
+
+# La consola de Windows (cp1252) no puede imprimir los emojis de abajo.
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 from llm_client.schemas import ChatMessage, ModelConfig, ModelResponse, TokenUsage
 
