@@ -8,6 +8,9 @@ coderhouse/
 __pycache__/
 *.pyc
 
+# Bases vectoriales: artefactos binarios que se regeneran con la ingesta.
+vectorstore/
+
 # Claves: nunca al repositorio.
 .env
 
