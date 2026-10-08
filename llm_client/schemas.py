@@ -8,6 +8,15 @@ from pydantic import BaseModel, ConfigDict, Field
 Role = Literal["system", "user", "assistant"]
 Provider = Literal["openai", "anthropic", "gemini"]
 
+# Modelo por defecto de cada proveedor. Gemini 3.5 Flash es el elegido porque
+# respeta `thinking_budget=0`: otros flash más nuevos razonan igual y gastan
+# el presupuesto de max_tokens antes de escribir la respuesta.
+MODELOS_POR_DEFECTO: dict[str, str] = {
+    "gemini": "gemini-3.5-flash",
+    "openai": "gpt-4o-mini",
+    "anthropic": "claude-haiku-4-5",
+}
+
 
 class ChatMessage(BaseModel):
     """Un mensaje de la conversación."""
